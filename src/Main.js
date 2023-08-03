@@ -1,7 +1,7 @@
 function Main(){
     return(
         <main>
-            <h2>Product.</h2>
+            <h2>Productos.</h2>
         </main>
         )
 }

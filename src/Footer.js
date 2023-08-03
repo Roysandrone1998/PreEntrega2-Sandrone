@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <p>Derechos reservados &copy; .</p>
+            <p>Todos los derechos reservados &copy; .</p>
         </footer>
     )
 }
