@@ -1,4 +1,39 @@
-body{
-  background-color: #5598c5;
-}
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200) ;
+#happySkate{
 
+  color: rgb(255, 255, 255);
+}
+.cart{
+  display: flex;
+  color: rgb(255, 255, 255);
+}
+.cart p{
+  background-color: rgb(240, 0, 0);
+  border-radius: 25px;
+}
+.nav{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.nav a{
+  color: rgb(0, 0, 0);
+  padding: 4px;
+  margin: 4px;
+}
+  
+
+header{
+  background-color: #90acbe;
+}
+body{
+  background-color: #256d9c;
+}
+footer{
+  display: flex;
+  justify-content: center;
+
+    background-color: #075285;
+}
