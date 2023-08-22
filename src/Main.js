@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button';
+import Item from './components/Item/Item';
 function Main(){
     return(
         <main>
@@ -8,7 +9,9 @@ function Main(){
             <Button as="input" type="submit" value="Tablas" />{' '}
             <Button as="input" type="reset" value="Ruedas" />
             </div>
+            <Item />
         </main>
+        
         )
 }
 
