@@ -37,3 +37,30 @@ footer{
 
     background-color: #075285;
 }
+
+.contador{
+  background-color: aliceblue;
+  display: flex;
+}
+
+.boton {
+  display: flex;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.boton:hover {
+  background-color: #2980b9;
+}
+.agregar{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
