@@ -1,21 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import Item from "./Item";
+import { useParams } from "react-router-dom";
 
-import ItemList from "./ItemList";
-
-const ItemListContainer = ({ greeting }) => {
-    console.log("Producto recibido:", productos);
-    const [productos, setProductos] = useState([]);
-
+function ItemListContainer() {
+    const [data, setData] = useState([]);
+    const resultado = useParams()
+    
+    
     useEffect(() => {
-        setProductos(productos);
-    }, []);
+        getProductos(setData);
+        if(resultado.id){
+            console.log("estoy en "+resultado.id)
+        }else{console.log("Estoy en inicio")}
+    }, [resultado.id]);
+
+    const getProductos = () => {
+        
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>setData(json))
+    }
 
     return (
-        <>
-            <h2>{greeting}</h2>
-            <ItemList productos={productos} /> 
-        </>
+        <Item data={data} />
     );
-};
+}
 
 export default ItemListContainer;

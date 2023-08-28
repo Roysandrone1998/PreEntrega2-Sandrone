@@ -1,7 +1,9 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
+import {Link} from 'react-router-dom';
 
-function Presentacional(props) {
+
+function Item(props) {
     const limit = 10;
     return (
         <div className='presentacional'>
@@ -18,6 +20,7 @@ function Presentacional(props) {
                                 <div>
                                 <ItemCount stock={10} inicial={1} onAdd={(cantidad) => console.log("Cantidad agregada:", cantidad)} />
                                 </div>
+                                <Link className="btn btn-secondary" to={`/item/${item.id}`}>Detalles</Link>
                             </article>
                         );
                     })}
@@ -27,4 +30,4 @@ function Presentacional(props) {
     );
 }
 
-export default Presentacional;
+export default Item;
