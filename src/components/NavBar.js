@@ -1,13 +1,18 @@
+import {Link, NavLink} from "react-router-dom"
 import CartWidget from "./CartWidget";
 function NavBar() {
     return (
         <>
-        
-        <nav class="nav">  
+        <Link to={"/"}>
         <h1 id="happySkate">Happy Skate</h1>
-            <a href="https://github.com/Roysandrone1998/Happy-Skate-js"target="_blank"rel="noopener noreferrer">link</a>
-            <a href="https://github.com/Roysandrone1998/Happy-Skate-js"target="_blank"rel="noopener noreferrer">link</a>
-            <a href="https://github.com/Roysandrone1998/Happy-Skate-js"target="_blank"rel="noopener noreferrer">link</a>
+        </Link>
+        
+        <nav className="nav">  
+        
+            <NavLink to="/" >Inicio</NavLink>
+            <NavLink to="/productos" >Productos</NavLink>
+            <NavLink to="/quienesSomos" >Quienes somos</NavLink>
+            <a href="/carrito">Carrito</a>
             <CartWidget />
         </nav>
         

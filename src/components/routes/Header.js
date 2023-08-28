@@ -1,5 +1,5 @@
 
-import NavBar from './components/NavBar';
+import NavBar from '../NavBar';
 function Header(){
     return(
     <header className="bg-primary" id="happyskate">
