@@ -1,4 +1,3 @@
-
 import { NavLink } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from '../Item/ItemListContainer';
@@ -8,9 +7,9 @@ function Main() {
     return (
         <main>
             <div>
-            <NavLink className="btn btn-primary" to="/cat/categoria1">Categoria1</NavLink>
-            <NavLink className="btn btn-primary" to="/cat/categoria2">Categoria2</NavLink>
-            <NavLink className="btn btn-primary" to="/cat/categoria3">Categoria3</NavLink>
+                <NavLink className="btn btn-primary" to="/cat/categoria1">Categoria1</NavLink>
+                <NavLink className="btn btn-primary" to="/cat/categoria2">Categoria2</NavLink>
+                <NavLink className="btn btn-primary" to="/cat/categoria3">Categoria3</NavLink>
             </div>
 
             <Routes>
@@ -25,6 +24,3 @@ function Main() {
 }
 
 export default Main;
-
-
-
