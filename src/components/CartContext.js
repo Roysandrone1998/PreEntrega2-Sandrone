@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     const existingItemIndex = cart.findIndex(
-      (product) => product.id === item.id
+      (productos) => productos.id === item.id
     );
 
     if (existingItemIndex !== -1) {
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-    const updatedCart = cart.filter((product) => product.id !== itemId);
+    const updatedCart = cart.filter((productos) => productos.id !== itemId);
     setCart(updatedCart);
   };
 
