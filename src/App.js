@@ -3,7 +3,7 @@ import Header  from "./components/routes/Header";
 import Main from "./components/routes/Main";
 import Footer from "./components/routes/Footer";
 import MiCustomProvider from "./components/MiCustomProvider";
-
+import "./components/db/Firebase"
 
 function App() {
   return (

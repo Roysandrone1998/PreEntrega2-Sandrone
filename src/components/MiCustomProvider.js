@@ -8,7 +8,7 @@ const MiCustomProvider = (props) => {
     const valorDelContexto = {
         carrito : [],
         montoTotal : 0,
-        cantidadTotal : 10,
+        cantidadTotal : 20,
     }
 
     return (

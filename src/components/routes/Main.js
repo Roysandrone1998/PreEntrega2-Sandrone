@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from '../Item/ItemListContainer';
 import ItemDetailContainer from '../Item/ItemDetailContainer';
 import Cart from '../Cart';
-
 function Main() {
     return (
         <main>
@@ -16,7 +15,7 @@ function Main() {
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
                 <Route path='/cart' element={<Cart />} />
-                <Route path='/cat/:id' element={<ItemListContainer />} />
+                <Route path='/cat/:catId' element="{s} "/>
                 <Route path='/item/:itemId' element={<ItemDetailContainer />} />
                 <Route path='*' element={<h1>ERROR 404 NOT FOUND</h1>} />
             </Routes>

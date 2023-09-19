@@ -13,7 +13,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     const existingItemIndex = cart.findIndex(
-      (productos) => productos.id === item.id
+      (product) => product.id === item.id
     );
 
     if (existingItemIndex !== -1) {
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-    const updatedCart = cart.filter((productos) => productos.id !== itemId);
+    const updatedCart = cart.filter((product) => product.id !== itemId);
     setCart(updatedCart);
   };
 
@@ -43,9 +43,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, calculateTotal, total }}
-    >
+    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, calculateTotal, total }}>
       {children}
     </CartContext.Provider>
   );

@@ -2,38 +2,40 @@ import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import { useParams } from "react-router-dom";
 import { db } from "../db/Firebase";
-import { getDocs, collection  } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
-function ItemListContainer() {
-    const [data, setData] = useState([]);
-    const resultado = useParams();
+export const ItemListContainer = () => {
+  const [productosCollection, setData] = useState([]);
+  const { category } = useParams();
 
-    useEffect(() => {
-        const productosCollection = collection(db, "productos");
-        const laConsulta = getDocs(productosCollection);
+  useEffect(() => {
+    const queryCollection = collection(db, "productos");
 
-
-        laConsulta
-            .then((querySnapshot) => {
-                const productos = [];
-                querySnapshot.forEach((doc) => {
-                    
-                    productos.push(doc.data());
-                });
-                setData(productos); 
-            })
-            .catch((error) => {
-                console.error("Error al obtener documentos: ", error);
-            });
-
-        if (resultado.id) {
-            console.log("Estoy en " + resultado.id);
-        } else {
-            console.log("Estoy en inicio");
+    const fetchData = async () => {
+      try {
+        let queryFilter = queryCollection;
+        
+        if (category) {
+          queryFilter = query(queryCollection, where("category", "==", category));
         }
-    }, [resultado.id]);
 
-    return <Item data={data} />;
-}
+        const querySnapshot = await getDocs(queryFilter);
+        const productosData = [];
+
+        querySnapshot.forEach((doc) => {
+          productosData.push({ id: doc.id, ...doc.data() });
+        });
+
+        setData(productosData);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+
+    fetchData();
+  }, [category]);
+
+  return <Item data={productosCollection} />;
+};
 
 export default ItemListContainer;
