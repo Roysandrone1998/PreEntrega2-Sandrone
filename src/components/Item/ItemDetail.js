@@ -1,22 +1,18 @@
 import ItemCount from "./ItemCount";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../CartContext";
+import { useCartContext } from "../CartContext";
 
-const ItemDetail = ({id, name, image, category, description, price, stock, data}) => {
-    const [goToCart, setGoToCart] = useState(false);
 
-    const { addItem } = useContext(CartContext);
 
+const ItemDetail = ({ id, name, price, image, description, category, stock }) => {
+    const [data, setData] = useState(false);
+    const { addItem } = useCartContext();
+  
     const onAdd = (quantity) => {
-        setGoToCart(true)
-        
-
-        const item = { id, name, price, image };
-
-        addItem(item, quantity);
+      setData(true);
+      addItem({ id, quantity});
     };
-
     return (
         <section className="card">
         <div >
@@ -32,13 +28,13 @@ const ItemDetail = ({id, name, image, category, description, price, stock, data}
                 <p className="">{description}</p>
             </div>
             <div className="mt-5">
-            {goToCart 
-                ? <Link to="/cart">Terminar Compra</Link>
-                : <>
-                    <ItemCount initial={1} stock={stock} onAdd={onAdd} />
-                    <Link to="/">Continue Shopping</Link>
-                </>
-    }
+            <div className='finish'>
+            {
+                data 
+                ? <Link className='finish-link' to='/Cart'>Terminar Compra</Link>
+                : <ItemCount initial={1}  stock={stock} onAdd={onAdd}/>
+            }
+            </div>
 </div>
             </div>
         </div>

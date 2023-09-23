@@ -5,7 +5,7 @@ import { db } from "../db/Firebase";
 import { getDoc, doc } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState(null); 
+    const [productos, setProductos] = useState(null); 
 
     const { itemId } = useParams(); 
 
@@ -17,7 +17,7 @@ export const ItemDetailContainer = () => {
 
                 if (docSnap.exists()) {
                     
-                    setProducto({ id: docSnap.id, ...docSnap.data() });
+                    setProductos({ id: docSnap.id, ...docSnap.data() });
                 } else {
                     
                     console.log("Documento no encontrado.");
@@ -32,8 +32,8 @@ export const ItemDetailContainer = () => {
 
     return (
         <div>
-            {producto ? (
-                <ItemDetail {...producto} />
+            {productos ? (
+                <ItemDetail {...productos} />
             ) : (
                 <p>Cargando producto...</p>
             )}

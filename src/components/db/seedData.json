@@ -39,6 +39,7 @@
         }
     },
     {
+
         "title": "Skate Completo 4",
         "price": 31000,
         "description": "Skate completo marca Element",
@@ -51,7 +52,6 @@
         }
     },
     {
-
         "title": "Skate Completo 5",
         "price": 38000,
         "description": "Skate completo marca Element",
@@ -64,7 +64,6 @@
         }
     },
     {
-
         "title": "Tabla 1",
         "price": 10000,
         "description": "Tabla shkate marca Element",
@@ -88,7 +87,6 @@
         }
     },
     {
-
         "title": "Tabla",
         "price": 10000,
         "description": "Tabla shkate marca Element",
@@ -101,7 +99,6 @@
         }
     },
     {
-
         "title": "Tabla",
         "price": 10000,
         "description": "Tabla shkate marca Element",
@@ -139,6 +136,7 @@
         }
     },
     {
+
         "title": "Rulemanes woodo",
         "price": 5000,
         "description": "Rulemanes marca woodo",
@@ -176,7 +174,9 @@
             "count": 140
         }
     },
-    {        "title": "Rulemanes woodo",
+    {
+
+        "title": "Rulemanes woodo",
         "price": 5000,
         "description": "Rulemanes marca woodo",
         "category": "Rulemanes",

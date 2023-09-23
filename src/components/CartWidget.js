@@ -1,29 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "./CartContext";
-import { NavLink } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import { Link } from 'react-router-dom';
 
-function CartWidget() {
-    const { cart } = useContext(CartContext);
-    const [totalQuantity, setTotalQuantity] = useState(0);
+import {useCartContext } from './CartContext'
 
-    useEffect(() => {
-        const newTotalQuantity = cart.reduce(
-            (total, item) => total + item.quantity,
-            0
-        );
-        setTotalQuantity(newTotalQuantity);
-    }, [cart]);
+const CartWidget = () => {
+  const {finalProducts } = useCartContext();
 
-    return (
-        <NavLink className="cart" to="/cart">
-            <i className="material-symbols-outlined">shopping_cart</i>
-            {totalQuantity > 0 && <span>{totalQuantity}</span>}
-        </NavLink>
-    );
-}
+  return (
+    <div >
+        
+        <Link to="/Cart"><i className="material-symbols-outlined">shopping_cart</i></Link>
+        
+        <span>{finalProducts() || ''}</span>
+    </div>
+  )
+};
 
-export default CartWidget;
-
-
-
-
+export default CartWidget

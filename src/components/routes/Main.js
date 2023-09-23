@@ -15,7 +15,7 @@ function Main() {
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
                 <Route path='/cart' element={<Cart />} />
-                <Route path='/cat/:catId' element="{s} "/>
+                <Route path='/cat/:categoriaId' element={<ItemDetailContainer />}/>
                 <Route path='/item/:itemId' element={<ItemDetailContainer />} />
                 <Route path='*' element={<h1>ERROR 404 NOT FOUND</h1>} />
             </Routes>

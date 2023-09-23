@@ -139,3 +139,68 @@ footer{
   justify-content: center;
   align-items: center;
 }
+
+.itemCart{
+  display: flex;
+  border-bottom: 1px solid gray;
+  max-width: 500px;
+  margin:5rem auto;
+  color: rgb(0, 0, 0);
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.itemCart img{
+  width: 200px;
+  margin-right: 1rem;
+}
+
+button {
+  color: rgb(184, 52, 52);
+  border-radius: 10px;
+  padding: 7px;
+  margin: 10px;
+  background-color: #100F0F;
+  border: 1px solid #3c67e3;
+}
+
+button:hover {
+  animation: pulsate 2s;
+
+}
+
+@keyframes pulsate {
+  0% {
+      box-shadow: 0 0 25px #17687e,
+          0 0 50px #4e00c2;
+  }
+}
+
+.total{
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.emptyCart{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:rgb(0, 0, 0);
+  padding:50px;
+}
+
+.emptyCart img{
+  margin-bottom: 2rem;
+}
+
+.emptyCart p{
+  margin-bottom: 2rem;
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+.buyButton{
+  display: flex;
+  justify-content: center;
+}

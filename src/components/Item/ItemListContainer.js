@@ -9,12 +9,11 @@ export const ItemListContainer = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    const queryCollection = collection(db, "productos");
-
     const fetchData = async () => {
       try {
+        const queryCollection = collection(db, "productos");
         let queryFilter = queryCollection;
-        
+
         if (category) {
           queryFilter = query(queryCollection, where("category", "==", category));
         }
