@@ -5,19 +5,19 @@ import { useCartContext } from "../CartContext";
 
 
 
-const ItemDetail = ({ id, name, price, image, description, category, stock }) => {
+const ItemDetail = ({ id, title, price, image, description, category, stock }) => {
     const [data, setData] = useState(false);
     const { addItem } = useCartContext();
     const onAdd = (quantity) => {
         setData(true);
-        addItem({ id, quantity});
+        addItem({ id, title, price, image, description, category, quantity, stock });
     };
     return (
         <section className="card">
         <div >
             <img src={image} alt="" className="" />
             <div >
-            <h3 className="">{name}</h3>
+            <h3 className="">{title}</h3>
             <div className="flex justify-center">
                 <p className="">Price: {price}$</p>
                 <p className="leading-relaxed mr-5 mb-2 text-body-color">Stock: {stock}</p>
