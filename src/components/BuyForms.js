@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Navbar  from "../components/NavBar"
+
 import { useCartContext } from '../components/CartContext';
 import {createItem} from '../components/db/Firebase';
 import {  ToastContainer ,toast } from 'react-toastify';
@@ -74,8 +74,6 @@ const BuyForm = () => {
 
     return (
         <div>
-        <Navbar/>
-
         <form>
             <div className='buyForm'>
             <h2 className='subtitle'>Formulario de Compra</h2>

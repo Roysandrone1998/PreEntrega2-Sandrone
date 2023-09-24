@@ -204,3 +204,11 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+
+
+  .buyForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+}

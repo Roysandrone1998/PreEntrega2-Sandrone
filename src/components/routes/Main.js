@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from '../Item/ItemListContainer';
 import ItemDetailContainer from '../Item/ItemDetailContainer';
 import Cart from '../Cart';
+import BuyForm from '../BuyForms';
 function Main() {
     return (
         <main>
@@ -17,6 +18,7 @@ function Main() {
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/cat/:categoriaId' element={<ItemDetailContainer />}/>
                 <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+                <Route path='/Buyform' element={<BuyForm />} />
                 <Route path='*' element={<h1>ERROR 404 NOT FOUND</h1>} />
             </Routes>
         </main>

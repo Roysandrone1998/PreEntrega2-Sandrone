@@ -2,7 +2,7 @@ import React from 'react';
 import { useCartContext } from './CartContext';
 import { Link } from 'react-router-dom';
 import ItemCart from '../components/ItemCart';
-import BuyForm from './BuyForms';
+
 
 
 
@@ -33,7 +33,7 @@ const Cart = () => {
           }
           <p className='total' style={{color: "Black"}}>Total:$ {finalPrice()}</p>
           <div className='buyButton'>
-            <Link to={BuyForm}><button>COMPRAR</button></Link>
+          <Link to="/buyForm"><button>COMPRAR</button></Link>
           </div>
         </div>
         
