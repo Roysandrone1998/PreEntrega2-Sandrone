@@ -1,28 +1,23 @@
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from '../Item/ItemListContainer';
 import ItemDetailContainer from '../Item/ItemDetailContainer';
 import Cart from '../Cart';
 import BuyForm from '../BuyForms';
-function Main() {
-    return (
-        <main>
-            <div>
-                <NavLink className="btn btn-primary" to="/cat/categoria1">Categoria1</NavLink>
-                <NavLink className="btn btn-primary" to="/cat/categoria2">Categoria2</NavLink>
-                <NavLink className="btn btn-primary" to="/cat/categoria3">Categoria3</NavLink>
-            </div>
 
-            <Routes>
-                <Route path='/' element={<ItemListContainer />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/cat/:categoriaId' element={<ItemDetailContainer />}/>
-                <Route path='/item/:itemId' element={<ItemDetailContainer />} />
-                <Route path='/Buyform' element={<BuyForm />} />
-                <Route path='*' element={<h1>ERROR 404 NOT FOUND</h1>} />
-            </Routes>
-        </main>
-    );
+function Main() {
+  return (
+    <main>
+      <Routes>
+        <Route path='/' element={<ItemListContainer />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/category/:category' element={<ItemListContainer />} />
+        <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+        <Route path='/buyform' element={<BuyForm />} />
+        <Route path='*' element={<h1>ERROR 404 NOT FOUND</h1>} />
+      </Routes>
+    </main>
+  );
 }
 
 export default Main;
